@@ -39,6 +39,7 @@ public class Patient implements Serializable {
 
     }
 
+
     public Patient(String nom, String prenom, String sexe, Date dateNaissance, String numeroTelephone,
                    String adresse) {
         this.nom = nom;
