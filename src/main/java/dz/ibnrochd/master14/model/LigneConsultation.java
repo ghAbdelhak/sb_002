@@ -1,15 +1,33 @@
 package dz.ibnrochd.master14.model;
 
+
+import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serial;
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
 
-@Entity
-@Table(schema = "cabinet", name = "ligne_consultation")
+@Getter
+@Setter
+
 public class LigneConsultation implements Serializable {
 
-	private static final long serialVersionUID = -1882485395538957648L;
+    @Serial
+    private static final long serialVersionUID = -1882485395538957648L;
 
-    
+    private Long id;
+
+    private String posologie;
+
+    private String uniteTemps;
+
+    private String quantite;
+
+
+    private Traitement traitement;
+
+    private Consultation consultation;
+
 }
+

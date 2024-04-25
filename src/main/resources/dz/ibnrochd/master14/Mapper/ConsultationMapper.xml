@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dz.ibnrochd.master14.Mapper.ConsultationMapper">
+
+    <resultMap id="consultationResultMap" type="dz.ibnrochd.master14.model.Consultation">
+        <id property="id" column="id"/>
+        <result property="dateConsult" column="date_consultation"/>
+        <result property="motif" column="motif"/>
+
+        <association property="patient" javaType="dz.ibnrochd.master14.model.Patient">
+            <id property="id" column="patient_id"/>
+            <result property="nom" column="patient_nom"/>
+            <result property="prenom" column="patient_prenom"/>
+        </association>
+
+        <collection property="lignesConsultation" ofType="dz.ibnrochd.master14.model.LigneConsultation"
+                    column="id" select="lignes_consultation">
+            <!--            <id property="id" column="ligne_consultation_id" />-->
+            <!--            <result property="posologie" column="posologie" />-->
+            <!--            <result property="uniteTemps" column="unite_temps" />-->
+            <!--            <result property="quantite" column="quantite" />-->
+
+            <!--            <association property="traitement" javaType="dz.ibnrochd.master14.model.Traitement">-->
+            <!--                <id property="id" column="traitement_id" />-->
+            <!--                <result property="nom" column="traitement_nom" />-->
+            <!--            </association>-->
+        </collection>
+    </resultMap>
+    <resultMap id="lignesconsultationResultMap" type="dz.ibnrochd.master14.model.LigneConsultation">
+        <id property="id" column="ligne_consultation_id"/>
+        <result property="posologie" column="posologie"/>
+        <result property="uniteTemps" column="unite_temps"/>
+        <result property="quantite" column="quantite"/>
+
+        <association property="traitement" column="id_traitement" javaType="dz.ibnrochd.master14.model.Traitement"
+                     select="selectByTraitementId">
+        </association>
+    </resultMap>
+
+    <select id="selectByTraitementId" resultType="dz.ibnrochd.master14.model.Traitement" parameterType="int">
+        SELECT *
+        FROM cabinet.traitement
+        WHERE id = #{id}
+    </select>
+
+    <select id="lignes_consultation" resultMap="lignesconsultationResultMap" parameterType="int">
+        SELECT *
+        FROM cabinet.ligne_consultation
+        WHERE id_consultation = #{id}
+    </select>
+
+    <insert id="insert" parameterType="dz.ibnrochd.master14.model.Consultation">
+        INSERT INTO cabinet.consultation (motif, date_consultation, id_patient)
+        VALUES (#{motif}, #{dateConsult}, #{patient.id})
+    </insert>
+
+    <select id="selectById" resultMap="consultationResultMap" parameterType="int">
+        SELECT c.id,
+               c.date_consultation,
+               c.motif,
+               p.id     AS patient_id,
+               p.nom    AS patient_nom,
+               p.prenom AS patient_prenom,
+               lc.id    AS ligne_consultation_id,
+               lc.posologie,
+               lc.unite_temps,
+               lc.quantite,
+               t.id     AS traitement_id,
+               t.nom    AS traitement_nom
+        FROM cabinet.consultation c
+                 LEFT JOIN cabinet.patient p ON c.id = p.id
+                 LEFT JOIN cabinet.ligne_consultation lc ON c.id = lc.id
+                 LEFT JOIN cabinet.traitement t ON lc.id = t.id
+        WHERE c.id = #{id}
+    </select>
+
+    <select id="selectByPatientId" resultType="dz.ibnrochd.master14.model.Consultation" parameterType="Long">
+        SELECT *
+        FROM cabinet.consultation
+        WHERE id_patient = #{patientId}
+    </select>
+
+    <update id="update" parameterType="dz.ibnrochd.master14.model.Consultation">
+        UPDATE cabinet.consultation
+        SET motif             = #{motif},
+            date_consultation = #{dateConsult},
+            id_patient        = #{patient.id}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="Long">
+        DELETE
+        FROM cabinet.consultation
+        WHERE id = #{id}
+    </delete>
+
+</mapper>

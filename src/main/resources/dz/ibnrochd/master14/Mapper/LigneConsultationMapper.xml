@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dz.ibnrochd.master14.Mapper.LigneConsultationMapper">
+
+    <!--    <insert id="insert" parameterType="dz.ibnrochd.master14.model.LigneConsultation">-->
+    <!--        INSERT INTO cabinet.ligne_consultation (id_consultation, id_traitement, posologie, unite_temps, quantite)-->
+    <!--        VALUES (#{consultation.id}, #{traitement.id}, #{posologie}, #{uniteTemps}, #{quantite})-->
+    <!--    </insert>-->
+
+    <!--    <select id="selectById" resultType="dz.ibnrochd.master14.model.LigneConsultation" parameterType="Long">-->
+    <!--        SELECT * FROM cabinet.ligne_consultation WHERE id = #{id}-->
+    <!--    </select>-->
+
+    <!--    <update id="update" parameterType="dz.ibnrochd.master14.model.LigneConsultation">-->
+    <!--        UPDATE cabinet.ligne_consultation SET id_consultation = #{consultation.id},-->
+    <!--                                              id_traitement = #{traitement.id}, posologie = #{posologie},-->
+    <!--                                              unite_temps = #{uniteTemps}, quantite = #{quantite} WHERE id = #{id}-->
+    <!--    </update>-->
+
+    <!--    <delete id="delete" parameterType="Long">-->
+    <!--        DELETE FROM cabinet.ligne_consultation WHERE id = #{id}-->
+    <!--    </delete>-->
+
+</mapper>

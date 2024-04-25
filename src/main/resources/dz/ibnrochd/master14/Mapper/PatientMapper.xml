@@ -1,0 +1,66 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dz.ibnrochd.master14.Mapper.PatientMapper">
+    <resultMap id="resultMap" type="dz.ibnrochd.master14.model.Patient">
+        <id property="id" column="id"/>
+        <result property="nom" column="nom"/>
+        <result property="prenom" column="prenom"/>
+        <result property="sexe" column="sexe"/>
+        <result property="dateNaissance" column="date_naissance"/>
+        <result property="numeroTelephone" column="numero_telephone"/>
+        <result property="adresse" column="adresse"/>
+
+        <association property="rendezVous" javaType="java.util.List">
+            <id property="id" column="id"/>
+            <result property="patient.id" column="id_patient"/>
+        </association>
+
+        <collection property="Consultation" javaType="java.util.List">
+            <id property="id" column="id"/>
+            <result property="dateConsult" column="date_consultation"/>
+        </collection>
+
+
+    </resultMap>
+
+
+    <insert id="insert" parameterType="dz.ibnrochd.master14.model.Patient">
+        INSERT INTO cabinet.patient (nom, prenom, sexe, date_naissance, numero_telephone, adresse)
+        VALUES (#{nom}, #{prenom}, #{sexe}, #{dateNaissance}, #{numeroTelephone}, #{adresse})
+    </insert>
+
+    <select id="selectById" resultType="dz.ibnrochd.master14.model.Patient" parameterType="int">
+        SELECT *
+        FROM cabinet.patient
+        WHERE id = #{id}
+    </select>
+
+    <select id="selectAll" resultType="dz.ibnrochd.master14.model.Patient">
+        SELECT *
+        FROM cabinet.patient
+    </select>
+
+    <update id="update" parameterType="dz.ibnrochd.master14.model.Patient">
+        UPDATE cabinet.patient
+        SET nom              = #{nom},
+            prenom           = #{prenom},
+            sexe             = #{sexe},
+            date_naissance   = #{dateNaissance},
+            numero_telephone = #{numeroTelephone},
+            adresse          = #{adresse}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE
+        FROM cabinet.patient
+        WHERE id = #{id}
+    </delete>
+
+    <select id="findByNom" parameterType="java.lang.String">
+        SELECT *
+        FROM cabinet.patient
+        WHERE nom = #{nom}
+    </select>
+
+</mapper>
