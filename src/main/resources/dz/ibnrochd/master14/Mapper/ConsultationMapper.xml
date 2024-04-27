@@ -15,17 +15,10 @@
 
         <collection property="lignesConsultation" ofType="dz.ibnrochd.master14.model.LigneConsultation"
                     column="id" select="lignes_consultation">
-            <!--            <id property="id" column="ligne_consultation_id" />-->
-            <!--            <result property="posologie" column="posologie" />-->
-            <!--            <result property="uniteTemps" column="unite_temps" />-->
-            <!--            <result property="quantite" column="quantite" />-->
-
-            <!--            <association property="traitement" javaType="dz.ibnrochd.master14.model.Traitement">-->
-            <!--                <id property="id" column="traitement_id" />-->
-            <!--                <result property="nom" column="traitement_nom" />-->
-            <!--            </association>-->
         </collection>
+
     </resultMap>
+
     <resultMap id="lignesconsultationResultMap" type="dz.ibnrochd.master14.model.LigneConsultation">
         <id property="id" column="ligne_consultation_id"/>
         <result property="posologie" column="posologie"/>
