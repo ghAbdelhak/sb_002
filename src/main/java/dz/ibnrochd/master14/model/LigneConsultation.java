@@ -14,9 +14,9 @@ import java.io.Serializable;
 public class LigneConsultation implements Serializable {
 
     @Serial
-    private static final long serialVersionUID = -1882485395538957648L;
+    private static final Long serialVersionUID = -1882485395538957648L;
 
-    private Long id;
+    private int id;
 
     private String posologie;
 

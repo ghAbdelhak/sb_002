@@ -7,7 +7,7 @@
     <!--        VALUES (#{consultation.id}, #{traitement.id}, #{posologie}, #{uniteTemps}, #{quantite})-->
     <!--    </insert>-->
 
-    <!--    <select id="selectById" resultType="dz.ibnrochd.master14.model.LigneConsultation" parameterType="Long">-->
+    <!--    <select id="selectById" resultType="dz.ibnrochd.master14.model.LigneConsultation" parameterType="int">-->
     <!--        SELECT * FROM cabinet.ligne_consultation WHERE id = #{id}-->
     <!--    </select>-->
 
@@ -17,7 +17,7 @@
     <!--                                              unite_temps = #{uniteTemps}, quantite = #{quantite} WHERE id = #{id}-->
     <!--    </update>-->
 
-    <!--    <delete id="delete" parameterType="Long">-->
+    <!--    <delete id="delete" parameterType="int">-->
     <!--        DELETE FROM cabinet.ligne_consultation WHERE id = #{id}-->
     <!--    </delete>-->
 

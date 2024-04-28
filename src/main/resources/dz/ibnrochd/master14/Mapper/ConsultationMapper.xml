@@ -67,7 +67,7 @@
         WHERE c.id = #{id}
     </select>
 
-    <select id="selectByPatientId" resultType="dz.ibnrochd.master14.model.Consultation" parameterType="Long">
+    <select id="selectByPatientId" resultType="dz.ibnrochd.master14.model.Consultation" parameterType="int">
         SELECT *
         FROM cabinet.consultation
         WHERE id_patient = #{patientId}
@@ -81,7 +81,7 @@
         WHERE id = #{id}
     </update>
 
-    <delete id="delete" parameterType="Long">
+    <delete id="delete" parameterType="int">
         DELETE
         FROM cabinet.consultation
         WHERE id = #{id}

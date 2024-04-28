@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Traitement</title>
+</head>
+<body>
+<h1>Update Traitement</h1>
+<form th:action="@{/traitement/update/{id}(id=${traitement.id})}" th:object="${traitement}" method="post">
+  <label>Nom de médicament:</label>
+  <input type="text" th:field="*{nom}" />
+  <br/>
+  <button type="submit">Update</button>
+</form>
+</body>
+</html>

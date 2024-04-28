@@ -20,12 +20,12 @@ public interface ConsultationMapper {
     Consultation selectById(int id);
 
 
-    List<Consultation> selectByPatientId(Long patientId);
+    List<Consultation> selectByPatientId(int patientId);
 
 
     void update(Consultation consultation);
 
 
-    void delete(Long id);
+    void delete(int id);
 }
 

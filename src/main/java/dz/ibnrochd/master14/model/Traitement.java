@@ -13,7 +13,7 @@ import java.io.Serializable;
 public class Traitement implements Serializable {
 
     @Serial
-    private static final long serialVersionUID = 8248365590951840055L;
+    private static final Long serialVersionUID = 8248365590951840055L;
 
     private int id;
 

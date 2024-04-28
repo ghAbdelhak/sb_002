@@ -15,7 +15,7 @@ import java.util.List;
 public class Consultation implements Serializable {
 
 	@Serial
-	private static final long serialVersionUID = -3669998604878710274L;
+	private static final Long serialVersionUID = -3669998604878710274L;
 
 
 	private int id;

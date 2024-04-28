@@ -1,25 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="dz.ibnrochd.master14.Mapper.TraitementMapper">
+    <resultMap id="resultMap" type="dz.ibnrochd.master14.model.Traitement">
+        <id property="id" column="id"/>
+        <result property="nom" column="nom"/>
+    </resultMap>
 
-    <!--    <insert id="insert" parameterType="dz.ibnrochd.master14.model.Traitement">-->
-    <!--        INSERT INTO cabinet.traitement (nom) VALUES (#{nom})-->
-    <!--    </insert>-->
 
-    <!--    <select id="selectByTraitementId" resultType="dz.ibnrochd.master14.model.Traitement" parameterType="int">-->
-    <!--        SELECT * FROM cabinet.traitement WHERE id = #{id}-->
-    <!--    </select>-->
+    <insert id="insert" parameterType="dz.ibnrochd.master14.model.Traitement">
+        INSERT INTO cabinet.traitement (nom)
+        VALUES (#{nom})
+    </insert>
 
-    <!--    <select id="selectAll" resultType="dz.ibnrochd.master14.model.Traitement">-->
-    <!--        SELECT * FROM cabinet.traitement-->
-    <!--    </select>-->
+    <select id="selectByTraitementId" resultType="dz.ibnrochd.master14.model.Traitement" parameterType="int">
+        SELECT *
+        FROM cabinet.traitement
+        WHERE id = #{id}
+    </select>
 
-    <!--    <update id="update" parameterType="dz.ibnrochd.master14.model.Traitement">-->
-    <!--        UPDATE cabinet.traitement SET nom = #{nom} WHERE id = #{id}-->
-    <!--    </update>-->
+    <select id="selectAll" resultType="dz.ibnrochd.master14.model.Traitement">
+        SELECT *
+        FROM cabinet.traitement
+    </select>
 
-    <!--    <delete id="delete" parameterType="Long">-->
-    <!--        DELETE FROM cabinet.traitement WHERE id = #{id}-->
-    <!--    </delete>-->
+    <update id="update" parameterType="dz.ibnrochd.master14.model.Traitement">
+        UPDATE cabinet.traitement
+        SET nom = #{nom}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE
+        FROM cabinet.traitement
+        WHERE id = #{id}
+    </delete>
 
 </mapper>

@@ -14,7 +14,7 @@ import java.util.Date;
 public class RendezVous implements Serializable {
 
 	@Serial
-	private static final long serialVersionUID = -7275578697948165342L;
+	private static final Long serialVersionUID = -7275578697948165342L;
 
     private int id;
 

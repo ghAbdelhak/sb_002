@@ -15,7 +15,7 @@ import java.util.List;
 public class Patient implements Serializable {
 
     @Serial
-    private static final long serialVersionUID = -3415388341943341473L;
+    private static final Long serialVersionUID = -3415388341943341473L;
 
     private int id;
 
