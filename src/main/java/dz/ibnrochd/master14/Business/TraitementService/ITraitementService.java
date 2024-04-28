@@ -8,7 +8,7 @@ import java.util.List;
  * @Author GHEZALI Abdelhak
  * Created on 2024/04/28.
  */
-@Service
+
 public interface ITraitementService {
      void createTraitement(Traitement traitement);
 

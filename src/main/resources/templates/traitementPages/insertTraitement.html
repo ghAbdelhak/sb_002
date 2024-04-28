@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Insert Traitement</title>
+</head>
+<body>
+<h1>Insert Traitement</h1>
+
+<!-- Display success message if present -->
+<div th:if="${successMessage}" style="background-color: #4CAF50; color: white; padding: 10px;">
+    <span th:text="${successMessage}"></span>
+</div>
+
+<!-- Display error message if present -->
+<div th:if="${errorMessage}" style="background-color: #f44336; color: white; padding: 10px;">
+    <span th:text="${errorMessage}"></span>
+</div>
+
+<!-- Form for traitement -->
+<!--<form th:action="@{/traitement/form}" th:object="${traitement}" method="post">-->
+<!--    <label for="nom">Nom de médicament:</label>-->
+<!--    <input type="text" id="nom" th:field="*{nom}" />-->
+<!--    <br/>-->
+<!--    <button type="submit">Submit</button>-->
+<!--</form>-->
+
+<div class="card">
+    <div class="card-body">
+        <form th:action="@{/traitement/form}" th:object="${traitement}" method="post">
+            <div class="mb-3">
+                <label for="nom" class="form-label">Nom de médicament:</label>
+                <input type="text" class="form-control" id="nom" th:field="*{nom}">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

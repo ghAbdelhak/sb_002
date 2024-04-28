@@ -6,7 +6,7 @@
         <result property="nom" column="nom"/>
         <result property="prenom" column="prenom"/>
         <result property="sexe" column="sexe"/>
-        <result property="dateNaissance" column="date_naissance"/>
+        <result property="dateNaissance" column="date_naissance" javaType="java.util.Date"/>
         <result property="numeroTelephone" column="numero_telephone"/>
         <result property="adresse" column="adresse"/>
 
@@ -23,19 +23,30 @@
 
     </resultMap>
 
+    <resultMap id="resultMapP" type="dz.ibnrochd.master14.model.Patient">
+        <id property="id" column="id"/>
+        <result property="nom" column="nom"/>
+        <result property="prenom" column="prenom"/>
+        <result property="sexe" column="sexe"/>
+        <result property="dateNaissance" column="date_naissance" javaType="java.util.Date"/>
+        <result property="numeroTelephone" column="numero_telephone"/>
+        <result property="adresse" column="adresse"/>
+
+    </resultMap>
+
 
     <insert id="insert" parameterType="dz.ibnrochd.master14.model.Patient">
         INSERT INTO cabinet.patient (nom, prenom, sexe, date_naissance, numero_telephone, adresse)
         VALUES (#{nom}, #{prenom}, #{sexe}, #{dateNaissance}, #{numeroTelephone}, #{adresse})
     </insert>
 
-    <select id="selectById" resultType="dz.ibnrochd.master14.model.Patient" parameterType="int">
+    <select id="selectById" resultMap="resultMapP" parameterType="int">
         SELECT *
         FROM cabinet.patient
         WHERE id = #{id}
     </select>
 
-    <select id="selectAll" resultType="dz.ibnrochd.master14.model.Patient">
+    <select id="selectAll" resultMap="resultMapP">
         SELECT *
         FROM cabinet.patient
     </select>

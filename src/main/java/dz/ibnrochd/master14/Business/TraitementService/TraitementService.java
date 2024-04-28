@@ -12,7 +12,7 @@ import java.util.List;
  * @Author GHEZALI Abdelhak
  * Created on 2024/04/25.
  */
-
+@Service
 public class TraitementService implements ITraitementService {
 
     @Autowired

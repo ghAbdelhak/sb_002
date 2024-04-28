@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update patient</title>
+</head>
+<body>
+<h1>Update patient</h1>
+<form th:action="@{/patient/update/{id}(id=${patient.id})}" th:object="${patient}" method="post">
+  <div class="row">
+    <div class="mb-0">
+      <label for="nom" class="form-label">Nom :</label>
+      <input type="text" class="form-control" id="nom" th:field="*{nom}">
+    </div>
+    <div class="mb-3">
+      <label for="prenom" class="form-label">prenom :</label>
+      <input type="text" class="form-control" id="prenom" th:field="*{prenom}">
+    </div>
+  </div>
+  <div class="row">
+    <label for="sexe" class="form-label">sexe :</label>
+    <select class="form-control" id="sexe" th:field="*{sexe}">
+      <option value="" selected>Please select</option>
+      <option value="m">masculine</option>
+      <option value="f">feminine</option>
+    </select>
+    <label for="dateNaissance" class="form-label">Date de naissance :</label>
+    <input class="form-control" type="date" id="dateNaissance" th:field="*{dateNaissance}" />
+  </div>
+  <div class="row">
+    <label for="numeroTelephone" class="form-label">telephone :</label>
+    <input class="form-control" type="number" id="numeroTelephone" th:field="*{numeroTelephone}" />
+
+    <label for="adresse" class="form-label">adresse :</label>
+    <input  class="form-control" type="text" id="adresse" th:field="*{adresse}" />
+  </div>
+  <button type="submit">Update</button>
+</form>
+</body>
+</html>

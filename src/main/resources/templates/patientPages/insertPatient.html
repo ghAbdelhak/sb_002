@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Insert patient</title>
+</head>
+<body>
+<h1>Insert patient</h1>
+
+<!-- Display success message if present -->
+<div th:if="${successMessage}" style="background-color: #4CAF50; color: white; padding: 10px;">
+    <span th:text="${successMessage}"></span>
+</div>
+
+<!-- Display error message if present -->
+<div th:if="${errorMessage}" style="background-color: #f44336; color: white; padding: 10px;">
+    <span th:text="${errorMessage}"></span>
+</div>
+
+<!-- Form for patient -->
+<!--<form th:action="@{/patient/form}" th:object="${patient}" method="post">-->
+<!--    <label for="nom">Nom :</label>-->
+<!--    <input type="text" id="nom" th:field="*{nom}" />-->
+<!--    <br/>-->
+<!--    <label for="prenom">prenom :</label>-->
+<!--    <input type="text" id="prenom" th:field="*{prenom}" />-->
+<!--    <br/>-->
+<!--    <label for="sexe">sexe :</label>-->
+<!--    <select id="sexe" th:field="*{sexe}">-->
+<!--        <option value="" selected>Please select</option>-->
+<!--        <option value="m">masculine</option>-->
+<!--        <option value="f">feminine</option>-->
+<!--    </select>-->
+<!--    <br/>-->
+<!--    <label for="dateNaissance">Date de naissance :</label>-->
+<!--    <input type="date" id="dateNaissance" th:field="*{dateNaissance}" />-->
+<!--    <br/>-->
+<!--    <label for="numeroTelephone">telephone :</label>-->
+<!--    <input type="number" id="numeroTelephone" th:field="*{numeroTelephone}" />-->
+<!--    <br/>-->
+<!--    <label for="adresse">adresse :</label>-->
+<!--    <input type="text" id="adresse" th:field="*{adresse}" />-->
+<!--    <br/>-->
+<!--    <button type="submit">Submit</button>-->
+<!--</form>-->
+
+<div class="card">
+    <div class="card-body">
+        <form th:action="@{/patient/form}" th:object="${patient}" method="post">
+            <div class="row">
+                <div class="mb-0">
+                    <label for="nom" class="form-label">Nom :</label>
+                    <input type="text" class="form-control" id="nom" th:field="*{nom}">
+                </div>
+                <div class="mb-3">
+                    <label for="prenom" class="form-label">prenom :</label>
+                    <input type="text" class="form-control" id="prenom" th:field="*{prenom}">
+                </div>
+            </div>
+            <div class="row">
+                <label for="sexe" class="form-label">sexe :</label>
+                <select class="form-control" id="sexe" th:field="*{sexe}">
+                    <option value="" selected>Please select</option>
+                    <option value="m">masculine</option>
+                    <option value="f">feminine</option>
+                </select>
+                <label for="dateNaissance" class="form-label">Date de naissance :</label>
+                <input class="form-control" type="date" id="dateNaissance" th:field="*{dateNaissance}" />
+            </div>
+            <div class="row">
+                <label for="numeroTelephone" class="form-label">telephone :</label>
+                <input class="form-control" type="number" id="numeroTelephone" th:field="*{numeroTelephone}" />
+
+                <label for="adresse" class="form-label">adresse :</label>
+                <input  class="form-control" type="text" id="adresse" th:field="*{adresse}" />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

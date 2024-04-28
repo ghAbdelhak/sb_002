@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard</title>
+  <link rel="shortcut icon" type="image/png" href="./assets/images/logos/favicon.png" />
+  <link rel="stylesheet" href="./assets/css/styles.min.css" />
+<style>
+    .sidebar-submenu {
+        display: none; /* Initially hidden */
+    }
+
+    .sidebar-submenu.show {
+        display: block; /* Shown when the show class is added */
+    }
+
+</style>
+</head>
+
+<body>
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    <!-- Sidebar Start -->
+    <aside class="left-sidebar">
+      <!-- Sidebar scroll-->
+      <div>
+        <div class="brand-logo d-flex align-items-center justify-content-between">
+          <a href="./index.html" class="text-nowrap logo-img">
+            <img src="./assets/images/logos/cntsid.svg" width="180" alt="" />
+          </a>
+          <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+            <i class="ti ti-x fs-8"></i>
+          </div>
+        </div>
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+          <ul id="sidebarnav">
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Home</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="./index.html" aria-expanded="false">
+                <span>
+                  <i class="ti ti-layout-dashboard"></i>
+                </span>
+                <span class="hide-menu">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">GESTION</span>
+            </li>
+              <li class="sidebar-item">
+                  <a class="sidebar-link" aria-expanded="false" onclick="toggleSubMenu('patientsSubMenu')">
+                    <span>
+                        <i class="ti ti-article"></i>
+                    </span>
+                      <span class="hide-menu">Patients</span>
+                      <span class="menu-arrow"></span>
+                  </a>
+                  <ul class="sidebar-submenu" id="patientsSubMenu">
+                      <li class="sidebar-item">
+                          <a class="sidebar-link" onclick="loadContent('/patient/form')">
+                              <span>Ajouter un patient</span>
+                          </a>
+                      </li>
+                      <li class="sidebar-item">
+                          <a class="sidebar-link" onclick="loadContent('/patient/list')">
+                              <span>Liste des patients</span>
+                          </a>
+                      </li>
+                  </ul>
+              </li>
+
+              <li class="sidebar-item">
+                  <a class="sidebar-link"  aria-expanded="false" onclick="toggleSubMenu('traitementsSubMenu')">
+                        <span>
+                            <i class="ti ti-article"></i>
+                        </span>
+                      <span class="hide-menu">Traitements</span>
+                      <span class="menu-arrow"></span>
+                  </a>
+                  <ul class="sidebar-submenu" id="traitementsSubMenu">
+                      <li class="sidebar-item">
+                          <a class="sidebar-link" onclick="loadContent('/traitement/form')">
+                              <span>Ajouter un traitement</span>
+                          </a>
+                      </li>
+                      <li class="sidebar-item">
+                          <a class="sidebar-link" onclick="loadContent('/traitement/list')">
+                              <span>Liste des traitements</span>
+                          </a>
+                      </li>
+                  </ul>
+              </li>
+          </ul>
+        </nav>
+        <!-- End Sidebar navigation -->
+      </div>
+      <!-- End Sidebar scroll-->
+    </aside>
+
+    <!--  Main wrapper -->
+    <div class="body-wrapper">
+      <!--  Header Start -->
+      <header class="app-header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+
+          <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
+            <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
+              <li class="nav-item dropdown">
+                <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <img src="./assets/images/profile/user-1.jpg" alt="" width="35" height="35" class="rounded-circle">
+                </a>
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
+                  <div class="message-body">
+                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                      <i class="ti ti-user fs-6"></i>
+                      <p class="mb-0 fs-3">My Profile</p>
+                    </a>
+                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                      <i class="ti ti-mail fs-6"></i>
+                      <p class="mb-0 fs-3">My Account</p>
+                    </a>
+                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                      <i class="ti ti-list-check fs-6"></i>
+                      <p class="mb-0 fs-3">My Task</p>
+                    </a>
+                    <a href="./authentication-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!--  Header End -->
+      <div class="container-fluid">
+
+          <section class="content" id="contentPlaceholder">
+
+          </section>
+
+        <div class="py-6 px-6 text-center">
+          <p class="mb-0 fs-4">Design and Developed by <a href="https://dz.linkedin.com/in/abdelhak-ghezali-659a8b248" target="_blank" class="pe-1 text-primary text-decoration-underline">GHEZALI Abdelhak</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="./assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/js/sidebarmenu.js"></script>
+  <script src="./assets/js/app.min.js"></script>
+  <script src="./assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+  <script src="./assets/libs/simplebar/dist/simplebar.js"></script>
+  <script src="./assets/js/dashboard.js"></script>
+  <script>
+      function toggleSubMenu(id) {
+          var submenu = document.getElementById(id);
+          if (submenu.style.display === "block") {
+              submenu.style.display = "none"; // Hide the submenu
+          } else {
+              submenu.style.display = "block"; // Show the submenu
+          }
+      }
+
+  </script>
+  <script>
+      function loadContent(page) {
+          $.ajax({
+              url: page,
+              type: 'GET',
+              success: function (data) {
+                  if(data.redirect)
+                      location.reload();
+                  else
+                      $('#contentPlaceholder').html(data);
+
+
+              },
+              error: function (error) {
+                  location.reload();
+              }
+          });
+      }
+  </script>
+</body>
+
+</html>

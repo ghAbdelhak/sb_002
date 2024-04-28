@@ -3,6 +3,7 @@ package dz.ibnrochd.master14.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -25,6 +26,7 @@ public class Patient implements Serializable {
 
     private String sexe;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateNaissance;
 
     private String numeroTelephone;
