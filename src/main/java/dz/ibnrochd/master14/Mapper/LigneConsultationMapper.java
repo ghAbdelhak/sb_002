@@ -15,12 +15,12 @@ public interface LigneConsultationMapper {
     void insert(LigneConsultation ligneConsultation);
 
 
-    LigneConsultation selectById(Long id);
+    LigneConsultation selectById(int id);
 
 
     void update(LigneConsultation ligneConsultation);
 
 
-    void delete(Long id);
+    void delete(int id);
 }
 

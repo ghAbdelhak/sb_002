@@ -1,8 +1,6 @@
 package dz.ibnrochd.master14;
 
-import dz.ibnrochd.master14.Business.ConsultationService;
-import dz.ibnrochd.master14.Business.PatientService;
-import dz.ibnrochd.master14.Business.TraitementService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -11,14 +9,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Sb002Application implements CommandLineRunner {
 
-    @Autowired
-    PatientService patientService;
-
-    @Autowired
-    ConsultationService consultationService;
-
-    @Autowired
-    TraitementService traitementService;
+//    @Autowired
+//    PatientService patientService;
+//
+//    @Autowired
+//    ConsultationService consultationService;
+//
+//    @Autowired
+//    TraitementService traitementService;
 
 
     public static void main(String[] args) {
