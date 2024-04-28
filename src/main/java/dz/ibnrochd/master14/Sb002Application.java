@@ -1,8 +1,8 @@
 package dz.ibnrochd.master14;
 
-import dz.ibnrochd.master14.Service.ConsultationService;
-import dz.ibnrochd.master14.Service.PatientService;
-import dz.ibnrochd.master14.Service.TraitementService;
+import dz.ibnrochd.master14.Business.ConsultationService;
+import dz.ibnrochd.master14.Business.PatientService;
+import dz.ibnrochd.master14.Business.TraitementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

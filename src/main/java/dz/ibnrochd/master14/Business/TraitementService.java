@@ -1,4 +1,4 @@
-package dz.ibnrochd.master14.Service;
+package dz.ibnrochd.master14.Business;
 
 
 import dz.ibnrochd.master14.Mapper.TraitementMapper;
