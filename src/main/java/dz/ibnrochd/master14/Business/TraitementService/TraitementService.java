@@ -33,8 +33,8 @@ public class TraitementService implements ITraitementService {
         return traitementMapper.selectAll();
     }
     @Override
-    public void updateTraitement(Traitement traitement) {
-        traitementMapper.update(traitement);
+    public void updateTraitement(int id,Traitement traitement) {
+        traitementMapper.update(id,traitement);
     }
 
     @Override

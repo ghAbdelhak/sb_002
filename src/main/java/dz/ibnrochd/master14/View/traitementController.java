@@ -38,15 +38,15 @@ public class traitementController {
         model.addAttribute("traitement", traitement);
         return "traitementPages/updateTraitement";
     }
-    @PostMapping("/update/{id}")
-    public String updateTraitement(@PathVariable("id") int id, @ModelAttribute("traitement") Traitement updatedTraitement) {
-        Traitement existingTraitement = traitementService.getTraitement(id);
-        if (existingTraitement != null) {
-            existingTraitement.setNom(updatedTraitement.getNom());
-            traitementService.updateTraitement(existingTraitement);
-        }
-        return "redirect:/";
-    }
+//    @PostMapping("/update/{id}")
+//    public String updateTraitement(@PathVariable("id") int id, @ModelAttribute("traitement") Traitement updatedTraitement) {
+//        Traitement existingTraitement = traitementService.getTraitement(id);
+//        if (existingTraitement != null) {
+//            existingTraitement.setNom(updatedTraitement.getNom());
+//            traitementService.updateTraitement(existingTraitement);
+//        }
+//        return "redirect:/";
+//    }
 
     @PostMapping("/form")
     public String submitForm(@ModelAttribute("traitement") Traitement traitement, Model model) {

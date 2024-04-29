@@ -53,12 +53,12 @@
 
     <update id="update" parameterType="dz.ibnrochd.master14.model.Patient">
         UPDATE cabinet.patient
-        SET nom              = #{nom},
-            prenom           = #{prenom},
-            sexe             = #{sexe},
-            date_naissance   = #{dateNaissance},
-            numero_telephone = #{numeroTelephone},
-            adresse          = #{adresse}
+        SET nom              = #{patient.nom},
+            prenom           = #{patient.prenom},
+            sexe             = #{patient.sexe},
+            date_naissance   = #{patient.dateNaissance},
+            numero_telephone = #{patient.numeroTelephone},
+            adresse          = #{patient.adresse}
         WHERE id = #{id}
     </update>
 

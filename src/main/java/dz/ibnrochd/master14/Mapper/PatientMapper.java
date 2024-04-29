@@ -17,7 +17,7 @@ public interface PatientMapper {
     List<Patient> selectAll();
 
 
-    void update(Patient patient);
+    void update(int id,Patient patient);
 
 
     void delete(int id);

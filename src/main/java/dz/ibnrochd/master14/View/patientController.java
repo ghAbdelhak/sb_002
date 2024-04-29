@@ -41,15 +41,15 @@ public class patientController {
         model.addAttribute("patient", patient);
         return "patientPages/updatePatient";
     }
-    @PostMapping("/update/{id}")
-    public String updatePatient(@PathVariable("id") int id, @ModelAttribute("patient") Patient updatedpatient) {
-        Patient existingPatient = patientService.obtenirPatientParId(id);
-        if (existingPatient != null) {
-            existingPatient.setNom(updatedpatient.getNom());
-            patientService.miseAjourPatient(existingPatient);
-        }
-        return "redirect:/";
-    }
+//    @PostMapping("/update/{id}")
+//    public String updatePatient(@PathVariable("id") int id, @ModelAttribute("patient") Patient updatedpatient) {
+//        Patient existingPatient = patientService.obtenirPatientParId(id);
+//        if (existingPatient != null) {
+//            existingPatient.setNom(updatedpatient.getNom());
+//            patientService.miseAjourPatient(existingPatient);
+//        }
+//        return "redirect:/";
+//    }
 
     @PostMapping("/form")
     public String submitForm(@ModelAttribute("patient") Patient patient, Model model) {

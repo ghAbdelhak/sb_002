@@ -2,6 +2,8 @@ package dz.ibnrochd.master14.View;
 
 
 import dz.ibnrochd.master14.Business.ConsultationService.IConsultationService;
+import dz.ibnrochd.master14.Business.PatientService.IPatientService;
+import dz.ibnrochd.master14.Business.TraitementService.ITraitementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,8 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/consultation")
 public class ConsultationController {
 
-    @Autowired
-    private IConsultationService consultationService;
+
+
+
 }
 
 

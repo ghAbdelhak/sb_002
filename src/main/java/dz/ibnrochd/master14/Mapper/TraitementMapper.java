@@ -19,7 +19,7 @@ public interface TraitementMapper {
 
     List<Traitement> selectAll();
 
-    void update(Traitement traitement);
+    void update(int id,Traitement traitement);
 
     void delete(int id);
 

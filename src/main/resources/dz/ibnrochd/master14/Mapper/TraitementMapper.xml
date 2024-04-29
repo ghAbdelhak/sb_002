@@ -25,7 +25,7 @@
 
     <update id="update" parameterType="dz.ibnrochd.master14.model.Traitement">
         UPDATE cabinet.traitement
-        SET nom = #{nom}
+        SET nom = #{traitement.nom}
         WHERE id = #{id}
     </update>
 

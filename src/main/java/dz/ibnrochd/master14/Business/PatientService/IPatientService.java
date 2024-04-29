@@ -22,7 +22,7 @@ public interface IPatientService {
 
     List<Patient> obtenirTousPatients();
 
-    void miseAjourPatient(Patient patient);
+    void miseAjourPatient(int id,Patient patient);
 
     void supprimerPatient(int id);
 

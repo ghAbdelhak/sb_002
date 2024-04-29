@@ -16,7 +16,7 @@ public interface ITraitementService {
 
      List<Traitement> getAllTraitements();
 
-     void updateTraitement(Traitement traitement);
+     void updateTraitement(int id,Traitement traitement);
 
      void deleteTraitement(int id);
 }

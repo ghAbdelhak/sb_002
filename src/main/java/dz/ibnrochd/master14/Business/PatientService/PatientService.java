@@ -39,8 +39,9 @@ public class PatientService implements IPatientService {
         return patientMapper.selectAll();
     }
     @Override
-    public void miseAjourPatient(Patient patient) {
-        patientMapper.update(patient);
+    public void miseAjourPatient(int id,Patient patient) {
+        System.out.println(patient.getNom()+patient.getPrenom()+patient.getSexe()+patient.getDateNaissance()+patient.getNumeroTelephone()+patient.getAdresse());
+        patientMapper.update(id,patient);
     }
     @Override
     public void supprimerPatient(int id) {
