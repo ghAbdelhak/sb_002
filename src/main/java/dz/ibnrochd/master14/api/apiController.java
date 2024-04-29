@@ -103,5 +103,4 @@ public class apiController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Unexpected error occurred");
         }
     }
-
 }
