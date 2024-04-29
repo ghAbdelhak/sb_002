@@ -68,7 +68,7 @@
     <td th:text="${patient.nom}"></td>
     <td th:text="${patient.prenom}"></td>
     <td th:text="${#dates.format(patient.dateNaissance, 'dd/MM/yyyy')}"></td>
-    <td class="button-group">
+    <td class="button-group" colspan="2">
       <a class="edit-button" th:href="'/patient/update/' + ${patient.id}" onclick="loadContent('/patient/update/' + ${patient.id})">Edit</a>
       <a class="delete-button" th:href="@{/patient/delete/{id}(id=${patient.id})}" onclick="return confirm('Are you sure you want to delete this treatment?')">Delete</a>
     </td>
